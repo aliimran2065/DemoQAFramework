@@ -1,0 +1,157 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-05-31T15:01:34.534Z",
+        "before": [
+          {
+            "result": {
+              "duration": 8808226000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.BookStoreBookCollectionStepDef.launchBrowser()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Add a Book to the Collection, Check and Log Out",
+        "description": "",
+        "id": "bookstore-book-collection;add-a-book-to-the-collection--check-and-log-out",
+        "after": [
+          {
+            "result": {
+              "duration": 1821000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.BookStoreBookCollectionStepDef.afterScenario(io.cucumber.java.Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 354994000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.BookStoreBookCollectionStepDef.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1648853000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am logged in with valid credentials",
+            "match": {
+              "location": "stepDef.BookStoreBookCollectionStepDef.i_am_logged_in_with_valid_credentials()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 85937000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I navigate to the BookStore page",
+            "match": {
+              "location": "stepDef.BookStoreBookCollectionStepDef.i_navigate_to_the_BookStore_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 221898000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I filter the listed books using the keyword \"Guide\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Guide\"",
+                  "offset": 44
+                }
+              ],
+              "location": "stepDef.BookStoreBookCollectionStepDef.i_filter_the_listed_books_using_the_keyword(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 711660000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I click on a book to view its details",
+            "match": {
+              "location": "stepDef.BookStoreBookCollectionStepDef.i_click_on_a_book_to_view_its_details()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 888855000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I add the book to my collection",
+            "match": {
+              "location": "stepDef.BookStoreBookCollectionStepDef.i_add_the_book_to_my_collection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 333029000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I should see the book added on my profile page",
+            "match": {
+              "location": "stepDef.BookStoreBookCollectionStepDef.i_should_see_the_book_added_on_my_profile_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 291898000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I log out",
+            "match": {
+              "location": "stepDef.BookStoreBookCollectionStepDef.i_log_out()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 37791000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I should be redirected to the login page",
+            "match": {
+              "location": "stepDef.BookStoreBookCollectionStepDef.i_should_be_redirected_to_the_login_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "BookStore Book Collection",
+    "description": "  As a user I want to navigate to the DEMOQA website, log in, filter and add a book to my collection, and verify it on my profile page",
+    "id": "bookstore-book-collection",
+    "keyword": "Feature",
+    "uri": "classpath:features/BookStoreBookCollection.feature",
+    "tags": []
+  }
+]
