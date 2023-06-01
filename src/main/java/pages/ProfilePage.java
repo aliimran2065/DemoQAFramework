@@ -47,16 +47,16 @@ public class ProfilePage extends BasePage {
 	}
 
 	public void deleteExistingBook() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		// Clicking the delete button
-		((JavascriptExecutor) driver).executeScript("arguments[0].click()", DELETE_BUTTON);
-		System.out.println("Delte Button Clicked");
+		js.executeScript("arguments[0].click()", DELETE_BUTTON);
+		System.out.println("Delete Button Clicked");
 
 		// Clicking the OK button in the delete books popup
-		((JavascriptExecutor) driver).executeScript("arguments[0].click()", OK_BUTTON_FOR_POPUP);
-		System.out.println("Delte Books Pop-up Clicked");
+		js.executeScript("arguments[0].click()", OK_BUTTON_FOR_POPUP);
+		System.out.println("Delete Books Pop-up Clicked");
 
 		// Handling the alert message after deleting books
-		JavascriptExecutor js = (JavascriptExecutor) driver;
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 60);
 			Alert alert = wait.until(ExpectedConditions.alertIsPresent());

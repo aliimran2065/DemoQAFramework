@@ -71,7 +71,7 @@ public class BookStoreBookCollectionStepDef {
 	@When("I add the book to my collection")
 	public void i_add_the_book_to_my_collection() {
 		bookStorePage.addToCollection();
-		bookStorePage.verifyAlert();
+		bookStorePage.verifyAlertAndPressProfileButton();
 	}
 
 	@Then("I should see the book added on my profile page")

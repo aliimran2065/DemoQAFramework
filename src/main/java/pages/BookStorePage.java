@@ -10,6 +10,8 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utils.ConfigurationReader;
+
 //The BookStorePage class represents the page object for the Book Store page in the application.
 //It extends the BasePage class, indicating that it inherits common functionality from it.
 //The class constructor takes a WebDriver object as a parameter to initialize the driver.
@@ -26,6 +28,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BookStorePage extends BasePage {
 
 	WebDriver driver;
+	String keyword = ConfigurationReader.getProperty("keyword");
 	
 	// The constructor initializes the WebDriver instance.
 	public BookStorePage(WebDriver driver) {
@@ -74,12 +77,14 @@ public class BookStorePage extends BasePage {
 		System.out.println("Book add to collection clicked.");
 	}
 
-	public void verifyAlert() {
+	public void verifyAlertAndPressProfileButton() {
 		// Verifies the alert and performs necessary actions
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 		driver.switchTo().alert();
 		alert.accept();
+		
+		//After alert is accepted, Profile page button is clicked right after 
 		wait.until(ExpectedConditions.elementToBeClickable(PROFILE_PAGE_HEADER));
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()", PROFILE_PAGE_HEADER);
 		System.out.println("Profile Page redirect button clicked");
@@ -103,11 +108,13 @@ public class BookStorePage extends BasePage {
 
 			String title = BOOKS_IN_COLLECTION.getText();
 
-			if (title.contains("Guide")) {
+			if (title.contains(keyword)) {
 				System.out.println("Book has been Succesfully added to your collection");
+				break; // Break the loop if condition is true	
 			}else {
 				System.out.println("Book has not been Succesfully added to your collection");
 			}
+		
 		}
 
 	}
