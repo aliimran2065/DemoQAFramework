@@ -1,12 +1,13 @@
 package pages;
 
 import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import utils.ConfigurationReader;
+
 
 //The class is a representation of the LoginPage in the application.
 //The class extends the BasePage class, which suggests that it inherits common functionality from the base page.
@@ -29,9 +30,9 @@ public class LoginPage extends BasePage {
 	WebElement USERNAME_TEXTBOX;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"password\"]")
 	WebElement PASSWORD_TEXTBOX;
-	@FindBy(how = How.ID, using = "login")
+	@FindBy(how = How.XPATH, using = "(//*[contains(text(),'Login')])[4]")
 	WebElement LOGIN_BUTTON;
-	@FindBy(how = How.XPATH, using = "/html/body/div[2]/div/div/div[1]/div")
+	@FindBy(how = How.XPATH, using = "(//*[contains(text(),'Login')])[1]")
 	WebElement LOGIN_PAGE_HEADER;
 
 	// The enterUsername method enters the provided user name in the user name text

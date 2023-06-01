@@ -1,7 +1,7 @@
 package pages;
 
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
+
 
 //verifyProfilePage(): Verifies if the profile page is displayed by asserting the header text.
 //deleteExistingBook(): Deletes the existing book by clicking the delete button and handling the alert messages.
@@ -25,25 +25,23 @@ public class ProfilePage extends BasePage {
 	}
 
 	// WebElement List
-	@FindBy(how = How.XPATH, using = "/html/body/div[2]/div/div/div[1]/div")
+	@FindBy(how = How.XPATH, using = "(//*[contains(text(),'Profile')])[1]")
 	WebElement PROFILE_PAGE_HEADER;
-	@FindBy(how = How.XPATH, using = "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/div[3]/button")
+	@FindBy(how = How.XPATH, using = "(//*[contains(text(),'Delete All Books')])[1]")
 	WebElement DELETE_BUTTON;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"closeSmallModal-ok\"]")
 	WebElement OK_BUTTON_FOR_POPUP;
-	@FindBy(how = How.ID, using = "gotoStore")
+	@FindBy(how = How.XPATH, using = "//*[@id=\"gotoStore\"]")
 	WebElement BOOKSTORE_BUTTON;
 
 	public void verifyProfilePage() {
 
-		// SoftAssert to perform assertions without stopping the execution
-		SoftAssert softAssert = new SoftAssert();
 		String expectedText = "Profile";
 		String ActualText = PROFILE_PAGE_HEADER.getText();
+		
 		// Asserting the actual text with the expected text
-		softAssert.assertEquals(ActualText, expectedText, "Headers dont match");
 		System.out.println("Profile page header: " + ActualText);
-		//assertTextEquals(PROFILE_PAGE_HEADER, expectedText);
+		assertTextEquals(PROFILE_PAGE_HEADER, expectedText);
 	}
 
 	public void deleteExistingBook() {

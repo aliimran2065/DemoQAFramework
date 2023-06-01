@@ -42,11 +42,11 @@ public class BookStorePage extends BasePage {
 	WebElement SEARCH_TEXTBOX;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"see-book-Git Pocket Guide\"]/a")
 	WebElement CLICK_BOOK;
-	@FindBy(how = How.XPATH, using = "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/div[9]/div[2]/button")
+	@FindBy(how = How.XPATH, using = "(//*[contains(text(),'Add To Your Collection')])")
 	WebElement ADD_TO_YOUR_COLLECTION_BUTTON;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"item-3\"]/span")
 	WebElement PROFILE_PAGE_BUTTON;
-	@FindBy(how = How.XPATH, using = "/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[6]/div/ul/li[3]")
+	@FindBy(how = How.XPATH, using = "(//*[contains(text(),'Profile')])[1]")
 	WebElement PROFILE_PAGE_HEADER;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"submit\"]")
 	WebElement LOGOUT_BUTTON;
